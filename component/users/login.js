@@ -1,6 +1,6 @@
 import decrypt from "../../helper/decryption.js";
 import generate_token from "../../helper/generate_token.js";
-import { UserModel } from "../../models/usermodel.js";
+import { UserModel } from "../../models/user_model.js";
 
 const LoginComp = async (req, res) => {
   try {

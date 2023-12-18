@@ -1,5 +1,5 @@
 import encrypt from "../../helper/encryption.js";
-import { UserModel } from "../../models/usermodel.js";
+import { UserModel } from "../../models/user_model.js";
 
 const SignupComp = async (req, res) => {
   try {
