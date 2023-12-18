@@ -32,9 +32,9 @@ router.post("/actor", Auth, ActorComp);
 
 // MOVIE
 router.get("/movie", MovieListComp);
-router.post("/movie", AddMovieComp);
+router.post("/movie", Auth, AddMovieComp);
 router.put("/movie", Auth, UpdateMovieComp);
-router.delete("/movie:id", DeleteMovieComp);
+router.delete("/movie:id", Auth, DeleteMovieComp);
 
 // MOVIE BY FILTER
 router.get("/movie/:filter", MovieFilterListComp);

@@ -16,7 +16,7 @@ const UpdateMovieComp = async (req, res) => {
     } = req.body;
 
     //Check - movie exist or not
-    const movie = await MovieModel.findOne({ movie_name });
+    const movie = await MovieModel.findOne({ _id: id });
     if (!movie) {
       return res.status(404).json({ message: "Movie doesn't exist" });
     }
