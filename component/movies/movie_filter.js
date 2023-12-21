@@ -7,7 +7,7 @@ const MovieFilterListComp = async (req, res) => {
     const input = req.params.filter.split("=");
     const filter_value = {};
     filter_value[input[0]] = input[1];
-    const { movie_name, producer, language, year } = filter_value;
+    const { movie_name, producer, language, year, category } = filter_value;
 
     // Movies based on filter value
 
@@ -20,6 +20,9 @@ const MovieFilterListComp = async (req, res) => {
         }) ||
         (language && {
           language: { $regex: language, $options: "i" },
+        }) ||
+        (category && {
+          category: { $regex: category, $options: "i" },
         }) ||
         (year && {
           year,
