@@ -7,7 +7,9 @@ const Auth = async (req, res, next) => {
     const token = req.headers["x-auth-token"];
     // Check - Token present or not
     if (!token) {
-      return res.status(401).json({ error: "Unauthorized: No token provided" });
+      return res
+        .status(401)
+        .json({ message: "Unauthorized: No token provided" });
     }
     // Token verification
     const key = process.env.KEY;
@@ -15,7 +17,7 @@ const Auth = async (req, res, next) => {
     const decode = jwt.verify(token, key);
     console.log(decode);
     if (!decode) {
-      return res.status(401).json({ error: "Unauthorized: Invalid token" });
+      return res.status(401).json({ message: "Unauthorized: Invalid token" });
     }
     next();
   } catch (error) {

@@ -13,10 +13,6 @@ const movie_schema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  status: {
-    type: String,
-    required: true,
-  },
   actors: {
     type: Array,
     required: true,
@@ -25,15 +21,19 @@ const movie_schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  },
+  language: {
+    type: String,
+    required: true,
+  },
   poster: {
     type: String,
     required: true,
   },
   banner: {
-    type: Array,
-    required: true,
-  },
-  language: {
     type: Array,
     required: true,
   },

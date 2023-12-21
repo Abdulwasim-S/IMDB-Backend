@@ -12,6 +12,7 @@ const AddMovieComp = async (req, res) => {
       poster,
       banner,
       language,
+      category,
     } = req.body;
 
     //Check - movie already exist
@@ -30,6 +31,7 @@ const AddMovieComp = async (req, res) => {
       poster,
       banner,
       language,
+      category,
     }).save();
 
     res.status(201).json({ message: "Movie added successfully!", new_movie });

@@ -3,6 +3,7 @@ import { MovieModel } from "../../models/movies_model.js";
 const MovieFilterListComp = async (req, res) => {
   try {
     // Filter key and value
+    // Input params should be in formate of "key=value"
     const input = req.params.filter.split("=");
     const filter_value = {};
     filter_value[input[0]] = input[1];
