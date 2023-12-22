@@ -34,7 +34,7 @@ const movie_schema = mongoose.Schema({
     required: true,
   },
   banner: {
-    type: Array,
+    type: String,
     required: true,
   },
 });
