@@ -24,15 +24,17 @@ const UpdateMovieComp = async (req, res) => {
     const updated_movie = await MovieModel.updateOne(
       { _id: id },
       {
-        movie_name,
-        producer,
-        year,
-        status,
-        actors,
-        plot,
-        poster,
-        banner,
-        language,
+        $set: {
+          movie_name,
+          producer,
+          year,
+          status,
+          actors,
+          plot,
+          poster,
+          banner,
+          language,
+        },
       }
     );
 
