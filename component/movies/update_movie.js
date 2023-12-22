@@ -3,7 +3,7 @@ import { MovieModel } from "../../models/movies_model.js";
 const UpdateMovieComp = async (req, res) => {
   try {
     const {
-      id,
+      _id,
       movie_name,
       producer,
       year,
@@ -16,7 +16,7 @@ const UpdateMovieComp = async (req, res) => {
     } = req.body;
 
     //Check - movie exist or not
-    const movie = await MovieModel.findOne({ _id: id });
+    const movie = await MovieModel.findOne({ _id });
     if (!movie) {
       return res.status(404).json({ message: "Movie doesn't exist" });
     }
