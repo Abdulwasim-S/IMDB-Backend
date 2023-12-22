@@ -22,7 +22,7 @@ const UpdateMovieComp = async (req, res) => {
     }
     //Update movie
     const updated_movie = await MovieModel.updateOne(
-      { _id: id },
+      { _id: _id },
       {
         movie_name,
         producer,
